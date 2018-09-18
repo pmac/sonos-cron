@@ -1,0 +1,2 @@
+# my fix for soundbar support
+https://github.com/pmac/SoCo/archive/master.tar.gz#egg=soco
