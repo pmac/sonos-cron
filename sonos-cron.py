@@ -28,12 +28,30 @@ def set_volume(volume):
     bar.volume = volume
 
 
+def get_status():
+    bar = get_playbar()
+    return bar.night_mode, bar.volume
+
+
 def main(mode):
+    if mode == 'status':
+        night_mode, volume = get_status()
+        mode_str = 'is' if night_mode else 'is not'
+        print '{} {} in Night Mode and volume is {}'.format(
+            PLAYBAR_NAME,
+            mode_str,
+            volume,
+        )
+        return
+
     if mode == 'day':
         set_night_mode(False)
     elif mode == 'night':
         set_night_mode(True)
         set_volume(15)
+    else:
+        print 'invalid command: {}'.format(mode)
+        return
 
     print '{} set to {} mode'.format(PLAYBAR_NAME, mode)
 
