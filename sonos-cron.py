@@ -5,6 +5,7 @@ from soco.discovery import by_name
 
 PLAYBAR_NAME = 'Family Room'
 PLAYBAR_OBJ = None
+NIGHT_VOLUME = 10
 
 
 def get_playbar():
@@ -48,7 +49,7 @@ def main(mode):
         set_night_mode(False)
     elif mode == 'night':
         set_night_mode(True)
-        set_volume(15)
+        set_volume(NIGHT_VOLUME)
     else:
         print 'invalid command: {}'.format(mode)
         return
